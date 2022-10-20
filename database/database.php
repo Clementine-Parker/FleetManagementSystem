@@ -1,5 +1,4 @@
 <?php
-
 $servername = 'localhost';
 $username = 'root';
 $password = 'password';
@@ -11,6 +10,7 @@ try {
     echo 'Connected Successfully';
 }
 catch (\Exception $e) {
+   $error_message= $e->getMessage();
 
 }
 

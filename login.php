@@ -1,9 +1,17 @@
 <?php
+$error_message = '';
+
 if ($_POST){
+    include ('database/database.php');
+
     $username = $_POST ['username'];
     $password = $_POST ['password'];
-
-    include ('database/database.php');
+    $query = 'SELECT * FROM USERS WHERE USERS.username = "' . $username . '" AND USERS.password = "' . $password . '"';
+    $stmt = $conn->prepare($query);
+    $result = $stmt;
+    var_dump($query);
+    die;
+    
 }
 ?>
 <!DOCTYPE html>
@@ -14,7 +22,10 @@ if ($_POST){
     <link rel="stylesheet" href="Style/login.css">
     
 </head>
-<body>
+<body id="loginBody">
+    <div id="Error">
+        <p>Error : <?= $error_message?></p>
+    </div>
     
     <div>
         <div class="loginHeader">
