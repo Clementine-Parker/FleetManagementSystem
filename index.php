@@ -1,3 +1,11 @@
+<?php
+if ($_POST){
+    $username = $_POST ['username'];
+    $password = $_POST ['password'];
+
+    include ('database/database.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,16 +23,16 @@
         </div>
 
         <div class="loginBody">
-            <form action="">
+            <form action="login.php" method="POST">
 
                 <div class="LoginInput">
                     <label for="">Username</label>
-                    <input type="text" name="" id="">
+                    <input name="username" type="text" name="" id="">
                 </div>
 
                 <div class="LoginInput">
                     <label for="">Password</label>
-                    <input type="password" name="" id="">
+                    <input name="password" type="password" name="" id="">
                 </div>
                 
                 <div class="LoginBtn">

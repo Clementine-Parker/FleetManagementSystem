@@ -3,12 +3,13 @@
 <head>
     <title>Dashboard - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/dash.css">
-    <script src="https://use.fontawesome.com/0c7a3095b5.js"></script>
+    <link rel="stylesheet" href="Style/icons.css">
+    <script src="https://kit.fontawesome.com/887823e70d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="DashMainContainer">
-        <div class="Dash_Sidebar"> 
-            <h3 class="Dash_Logo">Dashboard</h3>
+        <div class="Dash_Sidebar" id="Sidebar"> 
+            <h3 class="Dash_Logo" id="Logo">Dashboard</h3>
             <div class="Dash_User">
                 <img src="Assets/user.png" alt="User Image."/>
                 <span>Administrator</span>
@@ -27,9 +28,9 @@
                 </ul>
                 </div>
         </div>
-        <div class="Dash_ContContainer">
+        <div class="Dash_ContContainer" id="ContContainer">
             <div class="Dash_TopNav">
-                <a href=""><i class="fa fa-navicon"></i></a>
+                <a href="" id="toggle"><i class="fa fa-navicon"></i></a>
                 <a href="" id="logout"><i class="fa fa-power-off"></i>Logout</a>
             </div>  
             <div class="Dash_Content">
@@ -39,5 +40,7 @@
             </div>  
         </div>
     </div>
+    <script src="script.js">
+    </script>
 </body>
 </html>
