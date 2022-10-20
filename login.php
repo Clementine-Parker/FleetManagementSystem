@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 $error_message = '';
 
 if ($_POST){
@@ -12,6 +14,11 @@ if ($_POST){
     $result = $stmt->execute();
 
     if ($stmt->rowCount()>0) {
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $user = $stmt->fetchAll()[0];
+        $_SESSION['user'] = $user;
+        
+        header('location: dashboard.php');
         
     } else $error_message = 'Please Ensure Username And Password Is Correct';
 }
