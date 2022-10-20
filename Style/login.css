@@ -70,7 +70,7 @@ body {
     border: 2px solid #ffffff;
     color: #ffffff;
 }
-div#errorMessage {
+.errorMessage {
     background: #ffffff;
     text-align: center;
     color: red;

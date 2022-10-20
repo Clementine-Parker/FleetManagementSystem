@@ -21,14 +21,14 @@ if ($_POST){
 <head>
     <title> Login - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/login.css">
-    
+
 </head>
 <body id="loginBody">
-    <?php if (!empty($error_message)) { ?>
-    <div id="errorMessage">
-        <p>Error : <?= $error_message?> </p>
+<?php if (!empty($error_message)) { ?>
+    <div class="errorMessage">
+        <p>Error : <?= $error_message ?> </p>
     </div>
-    <?php } ?>
+    <?php } ?> 
     <div>
         <div class="loginHeader">
             <h1>Login Page</h1>
