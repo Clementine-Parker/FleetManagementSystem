@@ -6,27 +6,29 @@ if ($_POST){
 
     $username = $_POST ['username'];
     $password = $_POST ['password'];
+
     $query = 'SELECT * FROM USERS WHERE USERS.username = "' . $username . '" AND USERS.password = "' . $password . '"';
     $stmt = $conn->prepare($query);
-    $result = $stmt;
-    var_dump($query);
-    die;
-    
+    $result = $stmt->execute();
+
+    if ($stmt->rowCount()>0) {
+        
+    } else $error_message = 'Please Ensure Username And Password Is Correct';
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title> Login - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/login.css">
     
 </head>
 <body id="loginBody">
-    <div id="Error">
-        <p>Error : <?= $error_message?></p>
+    <?php if (!empty($error_message)) { ?>
+    <div id="errorMessage">
+        <p>Error : <?= $error_message?> </p>
     </div>
-    
+    <?php } ?>
     <div>
         <div class="loginHeader">
             <h1>Login Page</h1>
