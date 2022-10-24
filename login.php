@@ -9,7 +9,7 @@ if ($_POST){
     $username = $_POST ['username'];
     $password = $_POST ['password'];
 
-    $query = 'SELECT * FROM USERS WHERE USERS.username = "' . $username . '" AND USERS.password = "' . $password . '"';
+    $query = 'SELECT * FROM USERS WHERE USERS.username = "' . $username .'" AND USERS.password = "' . $password .'"';
     $stmt = $conn->prepare($query);
     $result = $stmt->execute();
 
@@ -33,7 +33,7 @@ if ($_POST){
 <body id="loginBody">
 <?php if (!empty($error_message)) { ?>
     <div class="errorMessage">
-        <p>Error : <?= $error_message ?> </p>
+        <p>Note : <?= $error_message ?> </p>
     </div>
     <?php } ?> 
     <div>

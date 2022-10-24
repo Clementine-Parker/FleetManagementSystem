@@ -1,0 +1,20 @@
+        <div class="Dash_Sidebar" id="Sidebar"> 
+            <h3 class="Dash_Logo" id="Logo">Dashboard</h3>
+            <div class="Dash_User">
+                <img src="Assets/user.png" alt="User Image."/>
+                <span>Administrator</span>
+            </div>
+            <div class="Dash_Sibebar_Menu">
+                <ul class="Menu_List">
+                    <li class="ActiveMenu">
+                        <a href="addvehicle.php"><i class="fa fa-plus-square"></i>  Capture New Vehicle</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-edit"></i>  Edit/Update Vehicle</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-server"></i>  View/Query Details</a>
+                    </li>
+                </ul>
+                </div>
+        </div>
