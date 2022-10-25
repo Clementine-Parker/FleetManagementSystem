@@ -12,6 +12,7 @@ $user = $_SESSION['user'];
 <head>
     <title>Dashboard - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/dash.css">
+    <link rel="stylesheet" href="Style/icons.css">
     <link rel="stylesheet" href="Style/add.css">
     <script src="https://kit.fontawesome.com/887823e70d.js" crossorigin="anonymous"></script>
 </head>
@@ -59,7 +60,7 @@ $user = $_SESSION['user'];
                     <label for="Driver">Driver</label>
                     <input type="text" class="formInput" id="Driver" name="Driver"/>
                     </div>
-                    <button type="submit"><i class="fa fa-plus">Add Vehicle</i></button>
+                    <button type="submit"><i class="fa fa-plus" id="Send">Add Vehicle</i></button>
                     </form>
                     </div>
                     
