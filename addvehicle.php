@@ -26,6 +26,7 @@ $user = $_SESSION['user'];
         ?>
             <div class="Dash_Content">
                 <div class="Dash_View">
+                    <div id="formContainer">
                     <form action="" class="appForm">
                     <div class="FormContainer">
                     <label for="RegNum">Registration Number</label>
@@ -61,6 +62,8 @@ $user = $_SESSION['user'];
                     </div>
                     <button type="submit"><i class="fa fa-plus">Add Vehicle</i></button>
                     </form>
+                    </div>
+                    
                 </div>
             </div>  
         </div>

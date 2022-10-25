@@ -2,15 +2,18 @@ form.appForm {
     width: 60%;
     margin: 0 auto;
     padding: 5px;
-    border: 2px solid rgb(0, 255, 98);
+    border: 2px solid rgb(0, 0, 0);
 }
 form input.formInput {
     width: 100%;
     margin: 0 auto;
     padding: 5px;
-    border: 2px solid blue;
+    border: 2px solid rgb(31, 31, 31);
     border-radius: 4px;
 }
 div.FormContainer {
     margin-bottom: 5px;
+}
+div#FormContainer {
+    padding-top: 10px;
 }
