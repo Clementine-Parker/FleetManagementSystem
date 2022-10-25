@@ -12,7 +12,6 @@ $user = $_SESSION['user'];
 <head>
     <title>Dashboard - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/dash.css">
-    <link rel="stylesheet" href="Style/icons.css">
     <link rel="stylesheet" href="Style/add.css">
     <script src="https://kit.fontawesome.com/887823e70d.js" crossorigin="anonymous"></script>
 </head>

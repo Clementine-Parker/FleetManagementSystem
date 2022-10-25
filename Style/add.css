@@ -1,14 +1,19 @@
 form.appForm {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     padding: 5px;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 5px;
+    background: #f4f6f9;
+}
+form label {
+    font-weight: bold;
+    text-transform: uppercase;
 }
 form input.formInput {
     width: 100%;
-    margin: 0 auto;
-    padding: 5px;
-    border: 2px solid rgb(31, 31, 31);
+    height: 33px;
+    border: 2px solid rgb(163, 163, 163);
     border-radius: 4px;
 }
 div.FormContainer {
