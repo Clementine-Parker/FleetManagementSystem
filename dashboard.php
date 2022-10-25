@@ -14,11 +14,11 @@ $user = $_SESSION['user'];
 </head>
 <body>
     <div id="DashMainContainer"> <?php 
-        include ('needed/sidebar.php')
+        include ('needed/sidebar.html')
         ?>
         <div class="Dash_ContContainer" id="ContContainer">
         <?php 
-        include ('needed/navbar.php')
+        include ('needed/navbar.html')
         ?>
             <div class="Dash_Content">
                 <div class="Dash_View">
