@@ -23,7 +23,7 @@ $user = $_SESSION['user'];
             <div class="Dash_Content">
                 <div class="Dash_View">
                     <div id="formContainer">
-                    <form action="database/addvehicle.php" class="appForm">
+                    <form action="database/vehicleadd.php" class="appForm">
                     <div class="FormContainer">
                     <label for="RegNum">Registration Number</label>
                     <input type="text" class="formInput" id="RegNum" name="RegNum"/>
