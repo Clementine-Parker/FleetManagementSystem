@@ -9,7 +9,7 @@ $user = $_SESSION['user'];
 <head>
     <title>Dashboard - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/dash.css">
-    <link rel="stylesheet" href="Style/icons.css">
+    <link rel="stylesheet" href="Style/view.css">
     <script src="https://kit.fontawesome.com/887823e70d.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,6 +22,26 @@ $user = $_SESSION['user'];
         ?>
             <div class="Dash_Content">
                 <div class="Dash_View">
+                    <div>
+                        <h1 class="header"> <i class="fa fa-laptop"></i> View/Query Information</h1>
+                    </div>
+                    <div class="viewdata">
+                        <table>
+                            <tr>
+                                <th>Registration Number</th>
+                                <th>Manufacturer</th>
+                                <th>Model</th>
+                                <th>Registration Number</th>
+                                <th>Registration Number</th>
+                                <th>Registration Number</th>
+                                <th>Registration Number</th>
+                                <th>Registration Number</th>
+                            </tr>
+                        </table>
+
+
+                    
+                    </div>
 
                 </div>
             </div>  
