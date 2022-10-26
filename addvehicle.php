@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) header ('location : index.php');
-
+$_SESSION['table'] = 'vehicle_registration';
 $user = $_SESSION['user'];
 ?>
 <!DOCTYPE html>
@@ -23,38 +23,38 @@ $user = $_SESSION['user'];
             <div class="Dash_Content">
                 <div class="Dash_View">
                     <div id="formContainer">
-                    <form action="database/vehicleadd.php" class="appForm">
+                    <form action="database/vehicleadd.php" method="POST" class="appForm">
                     <div class="FormContainer">
-                    <label for="RegNum">Registration Number</label>
-                    <input type="text" class="formInput" id="RegNum" name="RegNum"/>
+                    <label for="reg_num">Registration Number</label>
+                    <input type="text" class="formInput" id="reg_num" name="reg_num"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="Make">Make/Manufacturer</label>
-                    <input type="text" class="formInput" id="Make" name="Make"/>
+                    <label for="make">Make/Manufacturer</label>
+                    <input type="text" class="formInput" id="make" name="make"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="Model">Model</label>
-                    <input type="text" class="formInput" id="Model" name="Model"/>
+                    <label for="model">Model</label>
+                    <input type="text" class="formInput" id="model" name="model"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="TankCap">Tank Capacity</label>
-                    <input type="text" class="formInput" id="TankCap" name="TankCap"/>
+                    <label for="tank_cap">Tank Capacity</label>
+                    <input type="text" class="formInput" id="tank_cap" name="tank_cap"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="PrevOwner">Previous Owner</label>
-                    <input type="text" class="formInput" id="PrevOwner" name="PrevOwner"/>
+                    <label for="prev_owner">Previous Owner</label>
+                    <input type="text" class="formInput" id="prev_owner" name="prev_owner"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="DesBranch">Designated Branch</label>
-                    <input type="text" class="formInput" id="DesBranch" name="DesBranch"/>
+                    <label for="branch">Designated Branch</label>
+                    <input type="text" class="formInput" id="branch" name="branch"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="Depart">Department</label>
-                    <input type="text" class="formInput" id="Depart" name="Depart"/>
+                    <label for="department">Department</label>
+                    <input type="text" class="formInput" id="department" name="department"/>
                     </div>
                     <div class="FormContainer">
-                    <label for="Driver">Driver</label>
-                    <input type="text" class="formInput" id="Driver" name="Driver"/>
+                    <label for="driver">Driver</label>
+                    <input type="text" class="formInput" id="driver" name="driver"/>
                     </div>
                     <button type="submit" class="btnAdd"><i class="fa fa-plus" id="Send">Add Vehicle</i></button>
                     </form>

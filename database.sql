@@ -25,3 +25,5 @@ CREATE TABLE `fms`.`vehicle_registration`
 
  PRIMARY KEY (`id`))
  ENGINE = InnoDB;
+
+ALTER TABLE `vehicle_registration` CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;
