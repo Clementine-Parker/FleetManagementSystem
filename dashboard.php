@@ -53,7 +53,6 @@ $user = $_SESSION['user'];
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>  
         </div>
