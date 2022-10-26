@@ -29,3 +29,9 @@ div#FormContainer {
 #addveh {
     background: #3179ff;
 }
+button.btnAdd {
+    background: #3179ff;
+    border: 1px solid #3179ff;
+    color: #f4f6f9;
+    padding: 10px;
+}

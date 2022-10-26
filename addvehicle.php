@@ -1,12 +1,9 @@
 <?php
-
 session_start();
 if (!isset($_SESSION['user'])) header ('location : index.php');
 
 $user = $_SESSION['user'];
-
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +23,7 @@ $user = $_SESSION['user'];
             <div class="Dash_Content">
                 <div class="Dash_View">
                     <div id="formContainer">
-                    <form action="" class="appForm">
+                    <form action="database/addvehicle.php" class="appForm">
                     <div class="FormContainer">
                     <label for="RegNum">Registration Number</label>
                     <input type="text" class="formInput" id="RegNum" name="RegNum"/>
@@ -59,10 +56,9 @@ $user = $_SESSION['user'];
                     <label for="Driver">Driver</label>
                     <input type="text" class="formInput" id="Driver" name="Driver"/>
                     </div>
-                    <button type="submit"><i class="fa fa-plus" id="Send">Add Vehicle</i></button>
+                    <button type="submit" class="btnAdd"><i class="fa fa-plus" id="Send">Add Vehicle</i></button>
                     </form>
                     </div>
-                    
                 </div>
             </div>  
         </div>
