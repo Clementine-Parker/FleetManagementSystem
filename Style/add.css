@@ -41,3 +41,6 @@ p.responseMessage {
     background: #3179ff;
     padding: 20px;
 }
+p.responseMessage__success {
+    background: #3179ff;
+}
