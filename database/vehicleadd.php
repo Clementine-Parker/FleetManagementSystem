@@ -31,6 +31,6 @@ catch (PDOException $e) {
 }
 
 $_SESSION['response'] = $response;
-header ('location: ./addvehicle.php');
+header ('location: ../addvehicle.php');
 
 ?>

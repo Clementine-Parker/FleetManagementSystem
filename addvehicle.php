@@ -58,6 +58,17 @@ $user = $_SESSION['user'];
                     </div>
                     <button type="submit" class="btnAdd"><i class="fa fa-plus" id="Send">Add Vehicle</i></button>
                     </form>
+                    <?php
+                    if (isset($_SESSION['response'])) { 
+                        $response = $_SESSION['response']['message'];
+                        $is_success = $_SESSION['response']['success'];
+                        ?>
+                    <div class="Response">
+                        <p class="<?= $is_success ? 'responseMessage__success' : 'responseMessage__error' ?>">
+                        <?= $response ?>
+                    </p>
+                    </div>
+                    <?php unset($_SESSION['response']);} ?>
                     </div>
                 </div>
             </div>  

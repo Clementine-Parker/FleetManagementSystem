@@ -35,3 +35,9 @@ button.btnAdd {
     color: #f4f6f9;
     padding: 10px;
 }
+p.responseMessage {
+    font-size: 18px;
+    margin-top: 15px;
+    background: #3179ff;
+    padding: 20px;
+}
