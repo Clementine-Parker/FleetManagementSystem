@@ -25,22 +25,33 @@ $user = $_SESSION['user'];
                     <div>
                         <h1 class="header"> <i class="fa fa-laptop"></i> View/Query Information</h1>
                     </div>
-                    <div class="viewdata">
+                    <div class="viewstuff">
                         <table>
+                            <thead>
                             <tr>
-                                <th>Registration Number</th>
+                                <th>Reg Number</th>
                                 <th>Manufacturer</th>
-                                <th>Model</th>
-                                <th>Registration Number</th>
-                                <th>Registration Number</th>
-                                <th>Registration Number</th>
-                                <th>Registration Number</th>
-                                <th>Registration Number</th>
+                                <th>Vehicle Model</th>
+                                <th>Tank Capacity</th>
+                                <th>Previous Owner</th>
+                                <th>Designated Branch</th>
+                                <th>Department</th>
+                                <th>Driver</th>
                             </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>B250</td>
+                                    <td>Toyota</td>
+                                    <td>Corolla</td>
+                                    <td>20l</td>
+                                    <td>Sanele Gumede</td>
+                                    <td>Nasipoti</td>
+                                    <td>Education</td>
+                                    <td>Davidx3D</td>
+                                </tr>
+                            </tbody>
                         </table>
-
-
-                    
                     </div>
 
                 </div>
