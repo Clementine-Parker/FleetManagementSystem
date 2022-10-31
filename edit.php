@@ -68,8 +68,8 @@ $show = include ('database/info.php');
             </div>  
         </div>
     </div>
-    <script src="script.js">
-    </script>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/jQuery.js"></script>
     <script>
         function script() {
             this.initialize = function(){

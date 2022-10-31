@@ -64,7 +64,7 @@ $show = include ('database/info.php');
             </div>  
         </div>
     </div>
-    <script src="script.js">
+    <script src="javascript/script.js">
     </script>
 </body>
 </html>
