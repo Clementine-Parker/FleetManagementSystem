@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION['user'])) header ('location : index.php');
 
 $user = $_SESSION['user'];
+$show = include ('database/info.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,6 +30,7 @@ $user = $_SESSION['user'];
                         <table>
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Reg Number</th>
                                 <th>Manufacturer</th>
                                 <th>Vehicle Model</th>
@@ -40,19 +42,24 @@ $user = $_SESSION['user'];
                             </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                foreach ($show as $index => $user){ ?>
+                                
                                 <tr>
-                                    <td>B250</td>
-                                    <td>Toyota</td>
-                                    <td>Corolla</td>
-                                    <td>20l</td>
-                                    <td>Sanele Gumede</td>
-                                    <td>Nasipoti</td>
-                                    <td>Education</td>
-                                    <td>Davidx3D</td>
+                                    <td><?= $index + 1 ?></td>
+                                    <td><?= $user ['reg_num'] ?></td>
+                                    <td><?= $user ['make'] ?></td>
+                                    <td><?= $user ['model'] ?></td>
+                                    <td><?= $user ['tank_cap'] ?></td>
+                                    <td><?= $user ['prev_owner'] ?></td>
+                                    <td><?= $user ['branch'] ?></td>
+                                    <td><?= $user ['department'] ?></td>
+                                    <td><?= $user ['driver'] ?></td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
-                    </div>
+                    </div>  
                 </div>
             </div>  
         </div>

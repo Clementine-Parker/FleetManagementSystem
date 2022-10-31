@@ -26,9 +26,6 @@ div#FormContainer {
     font-weight: bold;
     text-transform: uppercase;
 }
-#addveh {
-    background: #3179ff;
-}
 button.btnAdd {
     background: #3179ff;
     border: 1px solid #3179ff;
@@ -42,5 +39,8 @@ p.responseMessage {
     padding: 20px;
 }
 p.responseMessage__success {
+    background: #3179ff;
+}
+#addveh {
     background: #3179ff;
 }
