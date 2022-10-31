@@ -57,7 +57,7 @@ $show = include ('database/info.php');
                                     <td><?= $user ['department'] ?></td>
                                     <td><?= $user ['driver'] ?></td>
                                     <td>
-                                        <a href="" class="Edit"><i class="fa fa-pencil"></i>Edit</a>
+                                        <a href="" class="Edit" dta><i class="fa fa-pencil"></i>Edit</a>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -72,16 +72,16 @@ $show = include ('database/info.php');
     </script>
     <script>
         function script() {
-            this.initialize = function() {
+            this.initialize = function(){
                 this.registerEvents();
         },
         this.registerEvents =   function() {
-            document.addEventListener('click',function (){
-                e.preventDefault();
+            document.addEventListener('click',function(e){
                 classList = e.target.classList;
 
                 if (classList.contains('Edit')) {
-                    console.log(classList);
+                    e.preventDefault();
+                    console.log('found');
                 }
             });
         }
