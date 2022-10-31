@@ -70,5 +70,21 @@ $show = include ('database/info.php');
     </div>
     <script src="script.js">
     </script>
+    <script>
+        function script() {
+            this.initialize = function() {
+                this.registerEvents();
+        },
+        this.registerEvents =   function() {
+            document.addEventListener('click',function (){
+                classList = e.target.classList;
+                console.log(classList);
+
+            });
+    }
+}
+    var script = new script();
+    script.initialize();
+    </script>
 </body>
 </html>
