@@ -62,7 +62,7 @@ $show = include ('database/info.php');
                                     <td class="Driver"><?= $user ['driver'] ?></td>
                                     <td class="Write"><?= $user ['write_off'] ?></td>
                                     <td>
-                                        <a href="" class="Edit" ><i class="fa fa-pencil"></i>Edit</a>
+                                        <a href="" class="Edit" data-userid="<?= $user['id'] ?>"><i class="fa fa-pencil" ></i>Edit</a>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -92,7 +92,7 @@ $show = include ('database/info.php');
                 if (classList.contains('Edit')) {
                     e.preventDefault();
                     
-
+                    ID = targetElement.dataset.userid;
                     RegNum = targetElement.closest('tr').querySelector('td.RegNum').innerHTML;
                     Make = targetElement.closest('tr').querySelector('td.Make').innerHTML;
                     Model = targetElement.closest('tr').querySelector('td.Model').innerHTML;
@@ -144,8 +144,47 @@ $show = include ('database/info.php');
                           <label for="RegNum"> Write Off (Yes/No) </label>\
                           <input type="text" class="form-control" id="Write" value="' +Write+'">\
                           </div>\
-                          </form>'
-                    })
+                          </form>',
+                          callback: function (isUpdate) {
+                            if (isUpdate){
+                                $.ajax({
+                                    method: 'POST',
+                                    data: {
+                                        vehicleId: ID,
+                                        regnum: document.getElementById('RegNum').value,
+                                        make: document.getElementById('Make').value,
+                                        model: document.getElementById('Model').value,
+                                        tank: document.getElementById('Tank').value,
+                                        prev: document.getElementById('Prev').value,
+                                        branch: document.getElementById('Branch').value,
+                                        depart: document.getElementById('Depart').value,
+                                        driver: document.getElementById('Driver').value,
+                                        write: document.getElementById('Write').value,
+                                    },
+                                    url: 'database/update.php',
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        if (data.success) {
+                                            BootstrapDialog.alert({
+                                                type: BootstrapDialog.TYPE_SUCCESS,
+                                                message: data.message,
+                                                callback: function () {
+                                                    location.reload();
+                                                }
+                                            });
+                                        } else 
+                                        BootstrapDialog.alert({
+                                                type: BootstrapDialog.TYPE_DANGER,
+                                                message: data.message,
+                                                callback: function () {
+                                                location.reload();
+                                                }
+                                            });
+                                    }
+                                });
+                            }
+                          }
+                    });
                 }
             });
         }
