@@ -93,21 +93,58 @@ $show = include ('database/info.php');
                     e.preventDefault();
                     
 
-                    RegNum = targetElement.closest('tr').querySelector('td.RegNum')
-                    Make = targetElement.closest('tr').querySelector('td.Make')
-                    Model = targetElement.closest('tr').querySelector('td.Model')
-                    Tank = targetElement.closest('tr').querySelector('td.TankCap')
-                    Prev = targetElement.closest('tr').querySelector('td.PrevOwner')
-                    Branch = targetElement.closest('tr').querySelector('td.Branch')
-                    Depart = targetElement.closest('tr').querySelector('td.Depart')
-                    Driver = targetElement.closest('tr').querySelector('td.Driver')
-                    Write = targetElement.closest('tr').querySelector('td.Writte')
+                    RegNum = targetElement.closest('tr').querySelector('td.RegNum').innerHTML;
+                    Make = targetElement.closest('tr').querySelector('td.Make').innerHTML;
+                    Model = targetElement.closest('tr').querySelector('td.Model').innerHTML;
+                    Tank = targetElement.closest('tr').querySelector('td.TankCap').innerHTML;
+                    Prev = targetElement.closest('tr').querySelector('td.PrevOwner').innerHTML;
+                    Branch = targetElement.closest('tr').querySelector('td.Branch').innerHTML;
+                    Depart = targetElement.closest('tr').querySelector('td.Depart').innerHTML;
+                    Driver = targetElement.closest('tr').querySelector('td.Driver').innerHTML;
+                    Write = targetElement.closest('tr').querySelector('td.Write').innerHTML;
 
                     console.log(RegNum,Make,Model,Tank,Prev,Branch,Depart,Driver,Write);
 
                     BootstrapDialog.confirm({
                         title: 'Update Vehicle Info',
-                        message: Make + ' ' + Model + ' ' + RegNum,
+                        message: '<form>\
+                        <div class="form-group">\
+                          <label for="RegNum"> Registration Number </label>\
+                          <input type="text" class="form-control" id="RegNum" value="' +RegNum+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Make/Manufacturer </label>\
+                          <input type="text" class="form-control" id="Make" value="' +Make+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Model </label>\
+                          <input type="text" class="form-control" id="Model" value="' +Model+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Tank Capacity </label>\
+                          <input type="text" class="form-control" id="Tank" value="' +Tank+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Previous Owner </label>\
+                          <input type="text" class="form-control" id="Prev" value="' +Prev+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Designated Branch </label>\
+                          <input type="text" class="form-control" id="Branch" value="' +Branch+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Department </label>\
+                          <input type="text" class="form-control" id="Depart" value="' +Depart+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Driver </label>\
+                          <input type="text" class="form-control" id="Driver" value="' +Driver+'">\
+                          </div>\
+                          <div class="form-group">\
+                          <label for="RegNum"> Write Off (Yes/No) </label>\
+                          <input type="text" class="form-control" id="Write" value="' +Write+'">\
+                          </div>\
+                          </form>'
                     })
                 }
             });
