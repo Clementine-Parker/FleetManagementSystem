@@ -39,6 +39,7 @@ $show = include ('database/info.php');
                                 <th>Designated Branch</th>
                                 <th>Department</th>
                                 <th>Driver</th>
+                                <th>Write Off</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,6 +56,7 @@ $show = include ('database/info.php');
                                     <td><?= $user ['branch'] ?></td>
                                     <td><?= $user ['department'] ?></td>
                                     <td><?= $user ['driver'] ?></td>
+                                    <td><?= $user ['write_off'] ?></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
