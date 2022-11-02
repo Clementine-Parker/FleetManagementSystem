@@ -26,4 +26,7 @@ CREATE TABLE `fms`.`vehicle_registration`
  PRIMARY KEY (`id`))
  ENGINE = InnoDB;
 
+ALTER TABLE `fms`.`vehicle_registration` 
+ADD COLUMN `write_off` VARCHAR(100) NOT NULL AFTER `driver`;
+
 ALTER TABLE `vehicle_registration` CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;

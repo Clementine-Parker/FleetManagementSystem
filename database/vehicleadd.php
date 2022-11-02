@@ -12,8 +12,8 @@ $driver = $_POST['driver'];
 
 try {
     $command = "INSERT INTO `fms`.`vehicle_registration`
-        (`reg_num`, `make`, `model`, `tank_cap`, `prev_owner`, `branch`, `department`, `driver`) 
-        VALUES ('".$reg_num."', '".$make."', '".$model."', '".$tank_cap."', '".$prev_owner."', '".$branch."', '".$department."', '".$driver."')";
+        (`reg_num`, `make`, `model`, `tank_cap`, `prev_owner`, `branch`, `department`, `write_off`, `driver`) 
+        VALUES ('".$reg_num."', '".$make."', '".$model."', '".$tank_cap."', '".$prev_owner."', '".$branch."', '".$department."', 'N/A', '".$driver."')";
 
     include ('database.php');
 
