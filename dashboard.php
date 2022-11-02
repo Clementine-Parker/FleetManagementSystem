@@ -11,6 +11,10 @@ $show = include ('database/info.php');
     <title>Dashboard - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/dash.css">
     <link rel="stylesheet" href="Style/view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
     <script src="https://kit.fontawesome.com/887823e70d.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -33,10 +37,10 @@ $show = include ('database/info.php');
                                 <th>ID</th>
                                 <th>Reg Number</th>
                                 <th>Manufacturer</th>
-                                <th>Vehicle Model</th>
+                                <th>Car Model</th>
                                 <th>Tank Capacity</th>
-                                <th>Previous Owner</th>
-                                <th>Designated Branch</th>
+                                <th>Prev Owner</th>
+                                <th>Branch</th>
                                 <th>Department</th>
                                 <th>Driver</th>
                                 <th>Write Off</th>
@@ -48,15 +52,15 @@ $show = include ('database/info.php');
                                 
                                 <tr>
                                     <td><?= $index + 1 ?></td>
-                                    <td><?= $user ['reg_num'] ?></td>
-                                    <td><?= $user ['make'] ?></td>
-                                    <td><?= $user ['model'] ?></td>
-                                    <td><?= $user ['tank_cap'] ?></td>
-                                    <td><?= $user ['prev_owner'] ?></td>
-                                    <td><?= $user ['branch'] ?></td>
-                                    <td><?= $user ['department'] ?></td>
-                                    <td><?= $user ['driver'] ?></td>
-                                    <td><?= $user ['write_off'] ?></td>
+                                    <td class="RegNum"><?= $user ['reg_num'] ?></td>
+                                    <td class="Make"><?= $user ['make'] ?></td>
+                                    <td class="Model"><?= $user ['model'] ?></td>
+                                    <td class="TankCap"><?= $user ['tank_cap'] ?></td>
+                                    <td class="PrevOwner"><?= $user ['prev_owner'] ?></td>
+                                    <td class="Branch"><?= $user ['branch'] ?></td>
+                                    <td class="Depart"><?= $user ['department'] ?></td>
+                                    <td class="Driver"><?= $user ['driver'] ?></td>
+                                    <td class="Write"><?= $user ['write_off'] ?></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -66,7 +70,49 @@ $show = include ('database/info.php');
             </div>  
         </div>
     </div>
-    <script src="javascript/script.js">
+    <script src="javascript/script.js"></script>
+    <script src="javascript/jQuery.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.js"></script>
+    <script>
+        function script() {
+            this.initialize = function(){
+                this.registerEvents();
+        },
+        this.registerEvents =   function() {
+            document.addEventListener('click',function(e){
+                targetElement = e.target;
+                classList = targetElement.classList;
+
+                if (classList.contains('Edit')) {
+                    e.preventDefault();
+                    
+
+                    RegNum = targetElement.closest('tr').querySelector('td.RegNum')
+                    Make = targetElement.closest('tr').querySelector('td.Make')
+                    Model = targetElement.closest('tr').querySelector('td.Model')
+                    Tank = targetElement.closest('tr').querySelector('td.TankCap')
+                    Prev = targetElement.closest('tr').querySelector('td.PrevOwner')
+                    Branch = targetElement.closest('tr').querySelector('td.Branch')
+                    Depart = targetElement.closest('tr').querySelector('td.Depart')
+                    Driver = targetElement.closest('tr').querySelector('td.Driver')
+                    Write = targetElement.closest('tr').querySelector('td.Writte')
+
+                    console.log(RegNum,Make,Model,Tank,Prev,Branch,Depart,Driver,Write);
+
+                    BootstrapDialog.confirm({
+                        title: 'Update Vehicle Info',
+                        message: Make + ' ' + Model + ' ' + RegNum,
+                    })
+                }
+            });
+        }
+    }
+    var script = new script();
+    script.initialize();
     </script>
 </body>
 </html>

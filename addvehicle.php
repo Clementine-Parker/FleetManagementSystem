@@ -10,6 +10,10 @@ $user = $_SESSION['user'];
     <title>Dashboard - Online Fleet Management System</title>
     <link rel="stylesheet" href="Style/dash.css">
     <link rel="stylesheet" href="Style/add.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
     <script src="https://kit.fontawesome.com/887823e70d.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,6 +26,7 @@ $user = $_SESSION['user'];
         ?>
             <div class="Dash_Content">
                 <div class="Dash_View">
+                    <div class="viewstuff">
                     <div id="formContainer">
                     <form action="database/vehicleadd.php" method="POST" class="appForm">
                     <div class="FormContainer">
@@ -70,11 +75,54 @@ $user = $_SESSION['user'];
                     </div>
                     <?php unset($_SESSION['response']);} ?>
                     </div>
+                    </div>  
                 </div>
             </div>  
         </div>
     </div>
-    <script src="javascript/script.js">
+    <script src="javascript/script.js"></script>
+    <script src="javascript/jQuery.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.js"></script>
+    <script>
+        function script() {
+            this.initialize = function(){
+                this.registerEvents();
+        },
+        this.registerEvents =   function() {
+            document.addEventListener('click',function(e){
+                targetElement = e.target;
+                classList = targetElement.classList;
+
+                if (classList.contains('Edit')) {
+                    e.preventDefault();
+                    
+
+                    RegNum = targetElement.closest('tr').querySelector('td.RegNum')
+                    Make = targetElement.closest('tr').querySelector('td.Make')
+                    Model = targetElement.closest('tr').querySelector('td.Model')
+                    Tank = targetElement.closest('tr').querySelector('td.TankCap')
+                    Prev = targetElement.closest('tr').querySelector('td.PrevOwner')
+                    Branch = targetElement.closest('tr').querySelector('td.Branch')
+                    Depart = targetElement.closest('tr').querySelector('td.Depart')
+                    Driver = targetElement.closest('tr').querySelector('td.Driver')
+                    Write = targetElement.closest('tr').querySelector('td.Writte')
+
+                    console.log(RegNum,Make,Model,Tank,Prev,Branch,Depart,Driver,Write);
+
+                    BootstrapDialog.confirm({
+                        title: 'Update Vehicle Info',
+                        message: Make + ' ' + Model + ' ' + RegNum,
+                    })
+                }
+            });
+        }
+    }
+    var script = new script();
+    script.initialize();
     </script>
 </body>
 </html>

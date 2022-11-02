@@ -1,3 +1,9 @@
+h1.header {
+    font-size : 21px;
+    color: #3179ff;
+    border-bottom: 2px solid grey;
+    padding-bottom: 5px;
+}
 form.appForm {
     margin: 0 auto;
     padding: 5px;
@@ -5,13 +11,10 @@ form.appForm {
     border-radius: 5px;
     background: #f4f6f9;
 }
-form label {
-    font-weight: bold;
-    text-transform: uppercase;
-}
+
 form input.formInput {
     width: 98%;
-    height: 33px;
+    height: 25px;
     border: 2px solid rgb(163, 163, 163);
     border-radius: 4px;
 }
@@ -22,7 +25,7 @@ div#FormContainer {
     padding-top: 10px;
 }
 #Send {
-    height: 10px;
+    height: 5px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -30,13 +33,13 @@ button.btnAdd {
     background: #3179ff;
     border: 1px solid #3179ff;
     color: #f4f6f9;
-    padding: 10px;
+    padding: 5px;
 }
 p.responseMessage {
     font-size: 18px;
     margin-top: 15px;
     background: #3179ff;
-    padding: 20px;
+    padding: 15px;
 }
 p.responseMessage__success {
     background: #3179ff;
