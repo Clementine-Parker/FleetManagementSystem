@@ -1,3 +1,5 @@
+CREATE SCHEMA `fms` ;
+
 CREATE TABLE `fms`.`users`
 
  (`id` INT NOT NULL ,
@@ -10,7 +12,7 @@ CREATE TABLE `fms`.`users`
 INSERT INTO `fms`.`users`
 
  (`id`, `username`, `password`)
- VALUES ('1', 'Myuser', 'SA1@123')
+ VALUES ('1', 'Myuser', 'SA1@123');
 
 CREATE TABLE `fms`.`vehicle_registration` 
 
@@ -29,4 +31,4 @@ CREATE TABLE `fms`.`vehicle_registration`
 ALTER TABLE `fms`.`vehicle_registration` 
 ADD COLUMN `write_off` VARCHAR(100) NOT NULL AFTER `driver`;
 
-ALTER TABLE `vehicle_registration` CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE `fms`.`vehicle_registration`  CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;

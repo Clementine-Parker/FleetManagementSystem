@@ -68,6 +68,7 @@ ul.Menu_List li:hover{
 }
 #logout {
     float: right;
+    padding-bottom: 10px;
 }
 .Dash_Content {
     padding: 10px 10px 10px 10px;

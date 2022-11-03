@@ -3,7 +3,7 @@ if ($_POST){
     $username = $_POST ['username'];
     $password = $_POST ['password'];
 
-    include ('database/database.php');
+    include ('Database/DatabaseConn.php');
 }
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ if ($_POST){
 <head>
     
     <title> Login - Online Fleet Management System</title>
-    <link rel="stylesheet" href="Style/login.css">
+    <link rel="stylesheet" href="Style/Login.css">
     
 </head>
 <body>
@@ -23,7 +23,7 @@ if ($_POST){
         </div>
 
         <div class="loginBody">
-            <form action="login.php" method="POST">
+            <form action="Login.php" method="POST">
 
                 <div class="LoginInput">
                     <label for="">Username</label>

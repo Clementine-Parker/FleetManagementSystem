@@ -4,7 +4,7 @@ session_start();
 $error_message = '';
 
 if ($_POST){
-    include ('database/database.php');
+    include ('Database/DatabaseConn.php');
 
     $username = $_POST ['username'];
     $password = $_POST ['password'];
@@ -18,7 +18,7 @@ if ($_POST){
         $user = $stmt->fetchAll()[0];
         $_SESSION['user'] = $user;
         
-        header('location: dashboard.php');
+        header('location: ViewInfo_Page.php');
         
     } else $error_message = 'Please Ensure Username And Password Is Correct';
 }
@@ -27,7 +27,7 @@ if ($_POST){
 <html>
 <head>
     <title> Login - Online Fleet Management System</title>
-    <link rel="stylesheet" href="Style/login.css">
+    <link rel="stylesheet" href="Style/Login.css">
 
 </head>
 <body id="loginBody">
@@ -43,7 +43,7 @@ if ($_POST){
         </div>
 
         <div class="loginBody">
-            <form action="login.php" method="POST">
+            <form action="Login.php" method="POST">
 
                 <div class="LoginInput">
                     <label for="">Username</label>

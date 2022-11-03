@@ -15,7 +15,7 @@ try {
         (`reg_num`, `make`, `model`, `tank_cap`, `prev_owner`, `branch`, `department`, `driver`, `write_off`) 
         VALUES ('".$reg_num."', '".$make."', '".$model."', '".$tank_cap."', '".$prev_owner."', '".$branch."', '".$department."', '".$driver."', 'N/A')";
 
-    include ('database.php');
+    include ('DatabaseConn.php');
 
     $response = [
         'success' => true,
@@ -31,6 +31,6 @@ catch (PDOException $e) {
 }
 
 $_SESSION['response'] = $response;
-header ('location: ../addvehicle.php');
+header ('location: ../CaptureData_Page.php');
 
 ?>

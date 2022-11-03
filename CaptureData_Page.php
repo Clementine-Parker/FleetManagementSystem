@@ -1,16 +1,15 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) header ('location : index.php');
-
+$_SESSION['table'] = 'vehicle_registration';
 $user = $_SESSION['user'];
-$show = include ('database/info.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard - Online Fleet Management System</title>
-    <link rel="stylesheet" href="Style/dash.css">
-    <link rel="stylesheet" href="Style/view.css">
+    <link rel="stylesheet" href="Style/Main.css">
+    <link rel="stylesheet" href="Style/Capture.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -19,59 +18,70 @@ $show = include ('database/info.php');
 </head>
 <body>
     <div id="DashMainContainer"> <?php 
-        include ('needed/sidebar.html')
+        include ('UI/Sidebar.html')
         ?>
         <div class="Dash_ContContainer" id="ContContainer">
         <?php 
-        include ('needed/navbar.html')
+        include ('UI/NavigationBar.html')
         ?>
             <div class="Dash_Content">
                 <div class="Dash_View">
-                    <div>
-                        <h1 class="header"> <i class="fa fa-laptop"></i> View/Query Information</h1>
-                    </div>
                     <div class="viewstuff">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Reg Number</th>
-                                <th>Manufacturer</th>
-                                <th>Car Model</th>
-                                <th>Tank Capacity</th>
-                                <th>Prev Owner</th>
-                                <th>Branch</th>
-                                <th>Department</th>
-                                <th>Driver</th>
-                                <th>Write Off</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($show as $index => $user){ ?>
-                                
-                                <tr>
-                                    <td><?= $index + 1 ?></td>
-                                    <td class="RegNum"><?= $user ['reg_num'] ?></td>
-                                    <td class="Make"><?= $user ['make'] ?></td>
-                                    <td class="Model"><?= $user ['model'] ?></td>
-                                    <td class="TankCap"><?= $user ['tank_cap'] ?></td>
-                                    <td class="PrevOwner"><?= $user ['prev_owner'] ?></td>
-                                    <td class="Branch"><?= $user ['branch'] ?></td>
-                                    <td class="Depart"><?= $user ['department'] ?></td>
-                                    <td class="Driver"><?= $user ['driver'] ?></td>
-                                    <td class="Write"><?= $user ['write_off'] ?></td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                    <div id="formContainer">
+                    <form action="database/vehicleadd.php" method="POST" class="appForm">
+                    <div class="FormContainer">
+                    <label for="reg_num">Registration Number</label>
+                    <input type="text" class="formInput" id="reg_num" name="reg_num"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="make">Make/Manufacturer</label>
+                    <input type="text" class="formInput" id="make" name="make"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="model">Model</label>
+                    <input type="text" class="formInput" id="model" name="model"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="tank_cap">Tank Capacity</label>
+                    <input type="text" class="formInput" id="tank_cap" name="tank_cap"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="prev_owner">Previous Owner</label>
+                    <input type="text" class="formInput" id="prev_owner" name="prev_owner"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="branch">Designated Branch</label>
+                    <input type="text" class="formInput" id="branch" name="branch"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="department">Department</label>
+                    <input type="text" class="formInput" id="department" name="department"/>
+                    </div>
+                    <div class="FormContainer">
+                    <label for="driver">Driver</label>
+                    <input type="text" class="formInput" id="driver" name="driver"/>
+                    </div>
+                    <button type="submit" class="btnAdd"><i class="fa fa-plus" id="Send">Add Vehicle</i></button>
+                    </form>
+                    <?php
+                    if (isset($_SESSION['response'])) { 
+                        $response = $_SESSION['response']['message'];
+                        $is_success = $_SESSION['response']['success'];
+                        ?>
+                    <div class="Response">
+                        <p class="<?= $is_success ? 'responseMessage__success' : 'responseMessage__error' ?>">
+                        <?= $response ?>
+                    </p>
+                    </div>
+                    <?php unset($_SESSION['response']);} ?>
+                    </div>
                     </div>  
                 </div>
             </div>  
         </div>
     </div>
-    <script src="javascript/script.js"></script>
-    <script src="javascript/jQuery.js"></script>
+    <script src="Javascript/Navigation.js"></script>
+    <script src="Javascript/jQuery.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
