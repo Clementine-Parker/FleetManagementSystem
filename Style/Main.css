@@ -1,0 +1,81 @@
+body {
+    font-family: Arial;
+}
+#DashMainContainer {
+    display: flex;
+    flex-direction: row;
+}
+.Dash_Sidebar {
+    margin-left: 0px;
+    width: 30%;
+    background: #555555;
+    height: 100vh;
+    border-right: 2px solid #3179ff;
+}
+.Dash_ContContainer {
+    width: 80%;
+    background: #f4f6f9;
+}
+h3.Dash_Logo {
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+}
+.Dash_User {
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3179ff;
+}
+.Dash_User img {
+    width: 40px;
+    display: inline-block;
+    margin-right: 2px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.Dash_User span {
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+ul.Menu_List {
+    padding: 5px;
+    margin-top: 20px;
+}
+ul.Menu_List li{
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+ul.Menu_List li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+ul.Menu_List li:hover{
+    background: #3179ff;
+    transition: 0.2s all;
+}
+.Dash_TopNav {
+    background: #ffffff;
+    padding: 20px;
+}
+.Dash_TopNav a{
+    color: #555555;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+#logout {
+    float: right;
+    padding-bottom: 10px;
+}
+.Dash_Content {
+    padding: 10px 10px 10px 10px;
+    height: 90%;
+}
+.Dash_View {
+    background: #ffffff;
+    padding: 20px;
+    height: 100%;
+}

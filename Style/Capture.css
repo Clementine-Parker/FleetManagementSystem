@@ -1,0 +1,49 @@
+h1.header {
+    font-size : 21px;
+    color: #3179ff;
+    border-bottom: 2px solid grey;
+    padding-bottom: 5px;
+}
+form.appForm {
+    margin: 0 auto;
+    padding: 5px;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 5px;
+    background: #f4f6f9;
+}
+
+form input.formInput {
+    width: 98%;
+    height: 25px;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 4px;
+}
+div.FormContainer {
+    margin-bottom: 5px;
+}
+div#FormContainer {
+    padding-top: 5px;
+}
+#Send {
+    height: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+button.btnAdd {
+    background: #3179ff;
+    border: 1px solid #3179ff;
+    color: #f4f6f9;
+    padding: 5px;
+}
+p.responseMessage {
+    font-size: 18px;
+    margin-top: 15px;
+    background: #3179ff;
+    padding: 15px;
+}
+p.responseMessage__success {
+    background: #3179ff;
+}
+#addveh {
+    background: #3179ff;
+}
