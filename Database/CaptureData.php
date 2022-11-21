@@ -31,6 +31,6 @@ catch (PDOException $e) {
 }
 
 $_SESSION['response'] = $response;
-header ('location: ../CaptureData_Page.php');
+header ('location: ../Capture.php');
 
 ?>
