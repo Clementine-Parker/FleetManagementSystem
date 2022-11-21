@@ -15,7 +15,7 @@
 
     try {
 
-        $sql = "UPDATE `fms`.`vehicle_registration` SET `reg_num` = '".$reg_num."', `make` = '".$make."',
+        $sql = "UPDATE `management`.`vehicle_registration` SET `reg_num` = '".$reg_num."', `make` = '".$make."',
           `model` = '".$model."', `tank_cap` = '".$tank."', `prev_owner` = '".$prev."', `branch` = '".$branch."',
           `department` = '".$depart."', `driver` = '".$driver."', `write_off` = '".$write."' WHERE (`id` = '".$vehicle_id."')";
         include ('DatabaseConn.php');

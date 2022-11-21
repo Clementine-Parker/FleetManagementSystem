@@ -4,7 +4,7 @@ $username = 'root';
 $password = 'password';
 
 try {
-    $conn = new PDO ("mysql:host=$servername;dbname=fms", $username, $password);
+    $conn = new PDO ("mysql:host=$servername;dbname=management", $username, $password);
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }

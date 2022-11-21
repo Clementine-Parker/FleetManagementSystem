@@ -18,7 +18,7 @@ if ($_POST){
         $user = $stmt->fetchAll()[0];
         $_SESSION['user'] = $user;
         
-        header('location: ViewInfo_Page.php');
+        header('location: View.php');
         
     } else $error_message = 'Please Ensure Username And Password Is Correct';
 }
@@ -43,7 +43,7 @@ if ($_POST){
         </div>
 
         <div class="loginBody">
-            <form action="Login.php" method="POST">
+            <form action="index.php" method="POST">
 
                 <div class="LoginInput">
                     <label for="">Username</label>

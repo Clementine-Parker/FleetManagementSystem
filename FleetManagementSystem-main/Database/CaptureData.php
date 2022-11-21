@@ -11,7 +11,7 @@ $department = $_POST['department'];
 $driver = $_POST['driver'];
 
 try {
-    $command = "INSERT INTO `fms`.`vehicle_registration`
+    $command = "INSERT INTO `management`.`vehicle_registration`
         (`reg_num`, `make`, `model`, `tank_cap`, `prev_owner`, `branch`, `department`, `driver`, `write_off`) 
         VALUES ('".$reg_num."', '".$make."', '".$model."', '".$tank_cap."', '".$prev_owner."', '".$branch."', '".$department."', '".$driver."', 'N/A')";
 
